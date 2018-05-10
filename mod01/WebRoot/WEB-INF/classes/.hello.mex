@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="hellobean" location="58,77" size="354,149">
+    <action name="helloworld" location="21,42" size="238,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="showhello.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="showhello.jsp" path="/showhello.jsp" location="441,160" size="150,55" />
+</Struts2Diagram>
+

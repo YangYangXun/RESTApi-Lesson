@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	
+    
+	<package name="hello" extends="struts-default" namespace="">
+		<action name="hello"
+			class="com.tainan.controller.HelloController" method="helloWorld">
+			<result name="success" type="dispatcher">
+				/twhello.jsp
+			</result>
+		</action>
+	</package>
+	<package name="regsiter" extends="struts-default">
+		<action name="login"
+			class="com.tainan.controller.RegisterController">
+		<result name="success">/WEB-INF/login/mylogin.html</result></action>
+		<action name="uservalid"
+			class="com.tainan.controller.RegisterController" method="valid">
+		<result name="ok">/WEB-INF/login/validok.jsp</result>
+		<result name="failure">/WEB-INF/login/invalid.jsp</result></action>
+		<action name="register"
+			class="com.tainan.controller.RegisterController">
+		<result name="success" type="dispatcher">
+			/WEB-INF/login/register.jsp
+		</result></action>
+		<action name="registersave"
+			class="com.tainan.controller.RegisterController" method="jdbcTemplateBeanUsersAdd">
+		<result name="success" type="dispatcher">
+			/WEB-INF/login/addok.jsp
+		</result>
+		<result name="failure" type="dispatcher">/error.jsp</result></action></package><include file="hello.xml"></include><include file="crm.xml"></include>
+	<package name="json" extends="json-default">
+		<result-types>
+			<result-type name="json"
+				class="com.googlecode.jsonplugin.JSONResult" />
+		</result-types>
+		<action name="jsondemo"
+			class="com.tainan.controller.JsonController">
+		<result name="success" type="json"></result></action></package></struts>    

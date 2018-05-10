@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="hello" location="46,26" size="444,170">
+    <action name="hello" location="94,107" size="220,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="twhello.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="regsiter" location="40,247" size="298,411">
+    <action name="login" location="123,106" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="mylogin.html" />
+      </result>
+    </action>
+    <action name="uservalid" location="123,172" size="173,62">
+      <result name="ok">
+        <resourceEdge source="ok" routing="0" target="validok.jsp" />
+      </result>
+      <result name="failure">
+        <resourceEdge source="failure" routing="0" target="invalid.jsp" />
+      </result>
+    </action>
+    <action name="register" location="91,270" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="register.jsp" />
+      </result>
+    </action>
+    <action name="registersave" location="99,347" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="addok.jsp" />
+      </result>
+      <result name="failure">
+        <resourceEdge source="failure" routing="0" target="error.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="gjunhello.jsp" path="/gjunhello.jsp" location="578,192" size="150,55" />
+  <webResource name="twhello.jsp" path="/twhello.jsp" location="558,55" size="150,55" />
+  <webResource name="mylogin.html" path="/WEB-INF/login/mylogin.html" location="500,350" size="150,55" />
+  <webResource name="validok.jsp" path="/WEB-INF/login/validok.jsp" location="532,444" size="150,55" />
+  <webResource name="invalid.jsp" path="/WEB-INF/login/invalid.jsp" location="516,521" size="150,55" />
+  <webResource name="gjunhello.jsp" path="/gjunhello.jsp" location="578,192" size="150,55" />
+  <webResource name="twhello.jsp" path="/twhello.jsp" location="558,55" size="150,55" />
+  <webResource name="mylogin.html" path="/WEB-INF/login/mylogin.html" location="500,350" size="150,55" />
+  <webResource name="validok.jsp" path="/WEB-INF/login/validok.jsp" location="532,444" size="150,55" />
+  <webResource name="invalid.jsp" path="/WEB-INF/login/invalid.jsp" location="516,521" size="150,55" />
+  <webResource name="register.jsp" path="/WEB-INF/login/register.jsp" location="571,634" size="150,55" />
+  <webResource name="addok.jsp" path="/WEB-INF/login/addok.jsp" location="330,685" size="150,55" />
+  <webResource name="error.jsp" path="/error.jsp" location="104,691" size="150,55" />
+  <include file="hello.xml" location="756,289" size="150,30" />
+  <include file="crm.xml" location="390,248" size="150,30" />
+  <package name="json" location="771,40" size="193,97">
+    <action name="jsondemo" location="33,47" size="150,40">
+      <result name="success" />
+    </action>
+  </package>
+</Struts2Diagram>
+

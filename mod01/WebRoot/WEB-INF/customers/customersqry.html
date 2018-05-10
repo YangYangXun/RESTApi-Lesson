@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>客戶資料查詢-by 客戶編號</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html;charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<!-- 引用jquery framework -->
+	<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+	<script>
+		//選擇器Selector$() 選取網頁下載完成時引發事件ready(事件程序)
+		$(document).ready(
+			//自訂沒有名稱程序
+			function(){
+				//alert('hi jquery');
+				//選擇按鈕id $('#idname') 引發click事件 click(事件程序);
+				$('#btnSend').click(
+					function(e)  //s-發生事件那一個標籤物件 e EventData(額外資訊或者功能)
+					{
+						//選擇器 文字輸入方塊 
+						var cid=$('#customerID').val();
+						var urlString='custqryid.do?cid='+cid;
+						//alert('hi jquery');
+						//採用非同步ajax 呼喚後端的服務(??)
+						$.ajax(
+							//JavaScript物件定義
+							{
+								url:urlString,
+								type:'GET',
+								//callback要處理程序
+								success:function(result,status,xhr)
+								{
+									if(result==null)
+									{
+										//查無紀錄
+										alert('查無該客戶記錄');
+									}else
+									{
+										alert(result.companyName);
+									}
+								},
+								error:function(xhr,status,error)
+								{
+									alert(error)
+								}
+								
+							}
+						);
+						e.preventDefault(); //防止原先submit要執行動作cancel
+					}
+				);
+			}
+		
+		);
+	</script>
+  </head>
+  
+  <body>
+    <fieldset>
+    	<legend>客戶資料查詢</legend>
+    	<form>
+    		<label>客戶編號</label>
+    		<input type="text" name="customerID" id="customerID">
+    		<input type="submit" value="查詢" id="btnSend"/>
+    	</form>
+    </fieldset>
+  </body>
+</html>

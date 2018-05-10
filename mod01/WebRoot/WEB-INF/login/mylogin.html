@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>登入頁面</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=BIG5">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <!-- 參考JavaScript file -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		//選擇器(Selector) 先選擇到文件物件進行初始化
+		$(document).ready(
+			//埋入程序 無須命名
+			function()
+			{
+				//進行初始化
+				//選擇到按鈕物件 使用id
+				var btnLogin=$('#btnLogin');
+				var userName=$('#userName');
+				var password=$('#password');
+				//執行階段綁定一個事件程序
+				btnLogin.click(
+					//s-event soruce廳的那一個物件
+					function(s)
+					{
+						
+						//檢查使用者名稱或密碼必須要輸入
+						if(userName.val().length==0)
+						{
+							alert('使用者名稱必須要輸入!!');
+							//剎車 剎 submit按鈕既定功能 要求表單進行action
+							s.preventDefault();
+						}
+						if(password.val().length==0)
+						{
+							alert('使用者密碼必須要輸入!!');
+							//剎車 剎 submit按鈕既定功能 要求表單進行action
+							s.preventDefault();
+						}
+					}
+				); //Event Source事件發生的點
+				
+			}
+		);
+		
+		//命名函數 當作事件程序
+		function valid()
+		{
+			//DOM(Document Object Model)
+			//參考出來
+			var userName=document.getElementById('userName');
+			var value=userName.value;
+			//判斷長度
+			if(value.length==0)
+			{
+				alert('使用者名稱必須要輸入!!');
+				return false;
+			}
+		}
+	</script>
+  </head>
+  
+  <body>
+    <form method="post" action="uservalid.action">
+    	<label>使用者名稱:</label>
+    	<input type="text" name="user.userName" maxlength="10" id="userName"/>
+    	<br/>
+    	<label>使用者密碼:</label>
+    	<input type="password" name="user.password" maxLength="10" id="password"/>
+    	<input type="submit" value="登入" id="btnLogin"/>
+    </form>
+  </body>
+</html>

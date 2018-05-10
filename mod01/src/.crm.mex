@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="customers" location="51,88" size="258,357">
+    <action name="customersform" location="90,77" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="customersform.jsp" />
+      </result>
+    </action>
+    <action name="customerssave" location="92,147" size="156,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="saveok.jsp" />
+      </result>
+      <result name="failure">
+        <resourceEdge source="failure" routing="0" target="savefailure.jsp" />
+      </result>
+    </action>
+    <action name="customerqrybyid" location="88,224" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="customersqry.jsp" />
+      </result>
+    </action>
+    <action name="allcustomers" location="34,307" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="showallcustomers.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="customersservice" location="663,89" size="304,160">
+    <action name="allcustomersservice" location="25,57" size="201,41">
+      <result name="success" />
+    </action>
+  </package>
+  <webResource name="customersform.jsp" path="/WEB-INF/customers/customersform.jsp" location="350,325" size="150,55" />
+  <webResource name="saveok.jsp" path="/WEB-INF/customers/saveok.jsp" location="354,425" size="150,55" />
+  <webResource name="savefailure.jsp" path="/WEB-INF/customers/savefailure.jsp" location="354,511" size="150,55" />
+  <webResource name="customersqry.jsp" path="/WEB-INF/customers/customersqry.jsp" location="350,200" size="150,55" />
+  <webResource name="showallcustomers.jsp" path="/WEB-INF/customers/showallcustomers.jsp" location="218,610" size="150,55" />
+  <package name="fileload" location="514,600" size="318,110">
+    <action name="loaddemo" location="27,31" size="224,53">
+      <result name="success" />
+    </action>
+  </package>
+</Struts2Diagram>
+
